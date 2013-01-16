@@ -35,6 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Logging">
+      <HintPath>..\packages\Ninject.Extensions.Logging.3.0.1.0\lib\net45-full\Ninject.Extensions.Logging.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -56,24 +62,27 @@
   <ItemGroup>
     <ProjectReference Include="..\Unseen.MSO.ApplicationServices.Intermediary\Unseen.MSO.ApplicationServices.Intermediary.csproj">
       <Project>{680720dd-23bf-4561-9f05-3e1abace570e}</Project>
-      <Name>Avelo.MSO.ApplicationServices.Intermediary</Name>
+      <Name>Unseen.MSO.ApplicationServices.Intermediary</Name>
     </ProjectReference>
     <ProjectReference Include="..\Unseen.MSO.Core.DTOs\Unseen.MSO.Core.DTOs.csproj">
       <Project>{7ee18f07-9bf6-41a4-ae80-91ed272a5cfb}</Project>
-      <Name>Avelo.MSO.Core.DTOs</Name>
+      <Name>Unseen.MSO.Core.DTOs</Name>
     </ProjectReference>
     <ProjectReference Include="..\Unseen.MSO101.ApplicationServices.Intermediary\Unseen.MSO101.ApplicationServices.Intermediary.csproj">
       <Project>{eccb379e-3b19-4fd4-b49f-225d72e655b4}</Project>
-      <Name>Avelo.MSO101.ApplicationServices.Intermediary</Name>
+      <Name>Unseen.MSO101.ApplicationServices.Intermediary</Name>
     </ProjectReference>
     <ProjectReference Include="..\Unseen.MSO101.Core.DTOs\Unseen.MSO101.Core.DTOs.csproj">
       <Project>{34050564-5a15-4bb3-a635-243b53dff47b}</Project>
-      <Name>Avelo.MSO101.Core.DTOs</Name>
+      <Name>Unseen.MSO101.Core.DTOs</Name>
     </ProjectReference>
     <ProjectReference Include="..\Unseen.MSO101.Domain.Core\Unseen.MSO101.Domain.Core.csproj">
       <Project>{31c7ac52-63cc-4491-b679-8a895e5e3d77}</Project>
-      <Name>Avelo.MSO101.Domain.Core</Name>
+      <Name>Unseen.MSO101.Domain.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

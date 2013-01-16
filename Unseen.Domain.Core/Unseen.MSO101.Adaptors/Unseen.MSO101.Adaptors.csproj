@@ -45,27 +45,27 @@
   <ItemGroup>
     <ProjectReference Include="..\Unseen.Domain.Core\Unseen.MSO.Domain.Core.csproj">
       <Project>{c400fe22-bbcf-4515-b58a-105b3a23a334}</Project>
-      <Name>Avelo.MSO.Domain.Core</Name>
+      <Name>Unseen.MSO.Domain.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Unseen.MSO.Adaptors\Unseen.MSO.Adaptors.csproj">
       <Project>{c8f08b13-1584-4fdf-9adc-e9e78d815ff7}</Project>
-      <Name>Avelo.MSO.Adaptors</Name>
+      <Name>Unseen.MSO.Adaptors</Name>
     </ProjectReference>
     <ProjectReference Include="..\Unseen.MSO.Core.Abstraction\Unseen.MSO.Core.Abstraction.csproj">
       <Project>{ab7d21fa-f2a2-4326-a0da-15f6a15eff22}</Project>
-      <Name>Avelo.MSO.Core.Abstraction</Name>
+      <Name>Unseen.MSO.Core.Abstraction</Name>
     </ProjectReference>
     <ProjectReference Include="..\Unseen.MSO.Core.DTOs\Unseen.MSO.Core.DTOs.csproj">
       <Project>{7ee18f07-9bf6-41a4-ae80-91ed272a5cfb}</Project>
-      <Name>Avelo.MSO.Core.DTOs</Name>
+      <Name>Unseen.MSO.Core.DTOs</Name>
     </ProjectReference>
     <ProjectReference Include="..\Unseen.MSO101.Core.DTOs\Unseen.MSO101.Core.DTOs.csproj">
       <Project>{34050564-5a15-4bb3-a635-243b53dff47b}</Project>
-      <Name>Avelo.MSO101.Core.DTOs</Name>
+      <Name>Unseen.MSO101.Core.DTOs</Name>
     </ProjectReference>
     <ProjectReference Include="..\Unseen.MSO101.Domain.Core\Unseen.MSO101.Domain.Core.csproj">
       <Project>{31c7ac52-63cc-4491-b679-8a895e5e3d77}</Project>
-      <Name>Avelo.MSO101.Domain.Core</Name>
+      <Name>Unseen.MSO101.Domain.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

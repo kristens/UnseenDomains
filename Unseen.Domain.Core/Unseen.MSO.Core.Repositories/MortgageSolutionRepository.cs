@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Unseen.Domain.Core;
 using Unseen.MSO.Core.Abstraction.Intermediary;
 using Unseen.MSO.Core.InfrastructureServices;
+using Unseen.MSO.Domain.Factories;
 
 namespace Unseen.MSO.Core.Repositories
 {
@@ -39,7 +40,7 @@ namespace Unseen.MSO.Core.Repositories
       // we would go to a database and get all these, maing user the owners match
       var requirement = new MortgageRequirement(Guid.NewGuid(), 250000, 90, 400000, false, DateTime.Now.AddDays(-45));
 
-      var productService = InfrastructureServiceFactory.CreateIntermediaryProductService();
+      var productService = InfrastructureFactory.CreateIntermediaryProductService();
       var product = productService.GetProduct(Guid.NewGuid());
 
       var productList = new List<Product>{product};

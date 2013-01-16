@@ -9,6 +9,7 @@ using Unseen.MSO.Core.Abstraction.Intermediary;
 using Unseen.MSO.Core.DTOs;
 using Unseen.MSO.Core.DTOs.Intermediary;
 using Unseen.MSO.Core.InfrastructureServices;
+using Unseen.MSO.Domain.Factories;
 
 namespace Unseen.MSO.ApplicationServices.Intermediary
 {
@@ -69,7 +70,7 @@ namespace Unseen.MSO.ApplicationServices.Intermediary
         var domainRequirement = _IntermediaryAdaptor.AdaptRequirement(requirement);
         var intermediaryDetails = _IntermediaryAdaptor.AdaptIntermediaryDetails(intermediaryDetailsDto);
 
-        var productService = InfrastructureServiceFactory.CreateIntermediaryProductService();
+        var productService = InfrastructureFactory.CreateIntermediaryProductService();
 
         var suitableProducts = productService.ListProducts(domainRequirement, intermediaryDetails);
 

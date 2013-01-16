@@ -48,27 +48,31 @@
   <ItemGroup>
     <ProjectReference Include="..\Unseen.Domain.Core\Unseen.MSO.Domain.Core.csproj">
       <Project>{c400fe22-bbcf-4515-b58a-105b3a23a334}</Project>
-      <Name>Avelo.MSO.Domain.Core</Name>
+      <Name>Unseen.MSO.Domain.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Unseen.MSO.Adaptors\Unseen.MSO.Adaptors.csproj">
       <Project>{c8f08b13-1584-4fdf-9adc-e9e78d815ff7}</Project>
-      <Name>Avelo.MSO.Adaptors</Name>
+      <Name>Unseen.MSO.Adaptors</Name>
     </ProjectReference>
     <ProjectReference Include="..\Unseen.MSO.Core.Abstraction\Unseen.MSO.Core.Abstraction.csproj">
       <Project>{ab7d21fa-f2a2-4326-a0da-15f6a15eff22}</Project>
-      <Name>Avelo.MSO.Core.Abstraction</Name>
+      <Name>Unseen.MSO.Core.Abstraction</Name>
     </ProjectReference>
     <ProjectReference Include="..\Unseen.MSO.Core.DTOs\Unseen.MSO.Core.DTOs.csproj">
       <Project>{7ee18f07-9bf6-41a4-ae80-91ed272a5cfb}</Project>
-      <Name>Avelo.MSO.Core.DTOs</Name>
+      <Name>Unseen.MSO.Core.DTOs</Name>
     </ProjectReference>
     <ProjectReference Include="..\Unseen.MSO.Core.InfrastructureServices\Unseen.MSO.Core.InfrastructureServices.csproj">
       <Project>{132661c7-93e0-4777-a1be-2e0ca33ea5df}</Project>
-      <Name>Avelo.MSO.Core.InfrastructureServices</Name>
+      <Name>Unseen.MSO.Core.InfrastructureServices</Name>
     </ProjectReference>
     <ProjectReference Include="..\Unseen.MSO.Core.Repositories\Unseen.MSO.Core.Repositories.csproj">
       <Project>{f80efd8d-de22-4be3-938b-e70d43e010e7}</Project>
-      <Name>Avelo.MSO.Core.Repositories</Name>
+      <Name>Unseen.MSO.Core.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Unseen.MSO.Domain.Factories\Unseen.MSO.Domain.InfrastructureFactories.csproj">
+      <Project>{ec5e4c9b-b29f-4d73-9a88-b173b83caa45}</Project>
+      <Name>Unseen.MSO.Domain.InfrastructureFactories</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

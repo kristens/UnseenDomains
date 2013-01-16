@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EC5E4C9B-B29F-4D73-9A88-B173B83CAA45}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Unseen.MSO.Domain.Factories</RootNamespace>
+    <AssemblyName>Unseen.MSO.Domain.Factories</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="InfrastructureFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Avelo.MSO.Bindings\Avelo.MSO.InfrastructureBindings.csproj">
+      <Project>{ab8f2b2d-077f-4fa1-8747-06c70a4425fa}</Project>
+      <Name>Avelo.MSO.InfrastructureBindings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Unseen.MSO.Adaptors\Unseen.MSO.Adaptors.csproj">
+      <Project>{c8f08b13-1584-4fdf-9adc-e9e78d815ff7}</Project>
+      <Name>Unseen.MSO.Adaptors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Unseen.MSO.Core.Abstraction\Unseen.MSO.Core.Abstraction.csproj">
+      <Project>{ab7d21fa-f2a2-4326-a0da-15f6a15eff22}</Project>
+      <Name>Unseen.MSO.Core.Abstraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Unseen.MSO.Core.InfrastructureServices\Unseen.MSO.Core.InfrastructureServices.csproj">
+      <Project>{132661c7-93e0-4777-a1be-2e0ca33ea5df}</Project>
+      <Name>Unseen.MSO.Core.InfrastructureServices</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

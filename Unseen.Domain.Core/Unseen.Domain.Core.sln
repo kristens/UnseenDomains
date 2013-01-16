@@ -25,6 +25,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unseen.MSO101.Adaptors", "U
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unseen.MSO101.ApplicationServices.Intermediary", "Unseen.MSO101.ApplicationServices.Intermediary\Unseen.MSO101.ApplicationServices.Intermediary.csproj", "{ECCB379E-3B19-4FD4-B49F-225D72E655B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unseen.MSO.Domain.InfrastructureFactories", "Unseen.MSO.Domain.Factories\Unseen.MSO.Domain.InfrastructureFactories.csproj", "{EC5E4C9B-B29F-4D73-9A88-B173B83CAA45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avelo.MSO.Domain.RepositoriesFactory", "Avelo.MSO.Domain.RepositoriesFactory\Avelo.MSO.Domain.RepositoriesFactory.csproj", "{6996CF08-8D69-4B5F-B38E-C4B69457E81F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avelo.MSO.InfrastructureBindings", "Avelo.MSO.Bindings\Avelo.MSO.InfrastructureBindings.csproj", "{AB8F2B2D-077F-4FA1-8747-06C70A4425FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +85,18 @@ Global
 		{ECCB379E-3B19-4FD4-B49F-225D72E655B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECCB379E-3B19-4FD4-B49F-225D72E655B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECCB379E-3B19-4FD4-B49F-225D72E655B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC5E4C9B-B29F-4D73-9A88-B173B83CAA45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC5E4C9B-B29F-4D73-9A88-B173B83CAA45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC5E4C9B-B29F-4D73-9A88-B173B83CAA45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC5E4C9B-B29F-4D73-9A88-B173B83CAA45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6996CF08-8D69-4B5F-B38E-C4B69457E81F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6996CF08-8D69-4B5F-B38E-C4B69457E81F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6996CF08-8D69-4B5F-B38E-C4B69457E81F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6996CF08-8D69-4B5F-B38E-C4B69457E81F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB8F2B2D-077F-4FA1-8747-06C70A4425FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB8F2B2D-077F-4FA1-8747-06C70A4425FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB8F2B2D-077F-4FA1-8747-06C70A4425FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB8F2B2D-077F-4FA1-8747-06C70A4425FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
