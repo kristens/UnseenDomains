@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Unseen.MSO.Core.DTOs.MortgageProductDto">
+    <Position X="1" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MortgageProductDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unseen.MSO.Core.DTOs.ProductDto">
+    <Position X="1.25" Y="2.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ProductDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unseen.MSO.Core.DTOs.SolutionDto">
+    <Position X="4" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SolutionDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unseen.MSO.Core.DTOs.MortgageSolutionDto">
+    <Position X="4" Y="1.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MortgageSolutionDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unseen.MSO.Core.DTOs.CaseDto">
+    <Position X="13.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CaseDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unseen.MSO.Core.DTOs.ProductSummaryDto">
+    <Position X="6.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ProductSummaryDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unseen.MSO.Core.DTOs.MortgageProductSummaryDto">
+    <Position X="6.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MortgageProductSummaryDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unseen.MSO.Core.DTOs.RequirementDto">
+    <Position X="8.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RequirementDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Unseen.MSO.Core.DTOs.MortgageRequirementDto">
+    <Position X="8.5" Y="1.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MortgageRequirementDto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

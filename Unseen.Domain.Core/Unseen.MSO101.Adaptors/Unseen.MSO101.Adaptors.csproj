@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D8C764D3-DE5A-4EB4-AA29-DC547927F2B3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Unseen.MSO101.Adaptors</RootNamespace>
+    <AssemblyName>Unseen.MSO101.Adaptors</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AveloMortgageAdaptor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Unseen.Domain.Core\Unseen.MSO.Domain.Core.csproj">
+      <Project>{c400fe22-bbcf-4515-b58a-105b3a23a334}</Project>
+      <Name>Avelo.MSO.Domain.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Unseen.MSO.Adaptors\Unseen.MSO.Adaptors.csproj">
+      <Project>{c8f08b13-1584-4fdf-9adc-e9e78d815ff7}</Project>
+      <Name>Avelo.MSO.Adaptors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Unseen.MSO.Core.Abstraction\Unseen.MSO.Core.Abstraction.csproj">
+      <Project>{ab7d21fa-f2a2-4326-a0da-15f6a15eff22}</Project>
+      <Name>Avelo.MSO.Core.Abstraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Unseen.MSO.Core.DTOs\Unseen.MSO.Core.DTOs.csproj">
+      <Project>{7ee18f07-9bf6-41a4-ae80-91ed272a5cfb}</Project>
+      <Name>Avelo.MSO.Core.DTOs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Unseen.MSO101.Core.DTOs\Unseen.MSO101.Core.DTOs.csproj">
+      <Project>{34050564-5a15-4bb3-a635-243b53dff47b}</Project>
+      <Name>Avelo.MSO101.Core.DTOs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Unseen.MSO101.Domain.Core\Unseen.MSO101.Domain.Core.csproj">
+      <Project>{31c7ac52-63cc-4491-b679-8a895e5e3d77}</Project>
+      <Name>Avelo.MSO101.Domain.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
