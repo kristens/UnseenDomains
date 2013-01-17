@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.Composition.Registration" />
@@ -69,10 +73,6 @@
     <ProjectReference Include="..\Unseen.MSO.Core.Repositories\Unseen.MSO.Core.Repositories.csproj">
       <Project>{f80efd8d-de22-4be3-938b-e70d43e010e7}</Project>
       <Name>Unseen.MSO.Core.Repositories</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Unseen.MSO.Domain.Factories\Unseen.MSO.Domain.InfrastructureFactories.csproj">
-      <Project>{ec5e4c9b-b29f-4d73-9a88-b173b83caa45}</Project>
-      <Name>Unseen.MSO.Domain.InfrastructureFactories</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

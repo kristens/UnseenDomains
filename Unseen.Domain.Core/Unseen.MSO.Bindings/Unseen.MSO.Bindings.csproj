@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EC5E4C9B-B29F-4D73-9A88-B173B83CAA45}</ProjectGuid>
+    <ProjectGuid>{821BA300-D22F-4D0B-945A-E8345B4AF139}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Unseen.MSO.Domain.Factories</RootNamespace>
-    <AssemblyName>Unseen.MSO.Domain.Factories</AssemblyName>
+    <RootNamespace>Unseen.MSO.Bindings</RootNamespace>
+    <AssemblyName>Unseen.MSO.Bindings</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -42,14 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InfrastructureFactory.cs" />
+    <Compile Include="DefaultBindings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Avelo.MSO.Bindings\Avelo.MSO.InfrastructureBindings.csproj">
-      <Project>{ab8f2b2d-077f-4fa1-8747-06c70a4425fa}</Project>
-      <Name>Avelo.MSO.InfrastructureBindings</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Unseen.MSO.Adaptors\Unseen.MSO.Adaptors.csproj">
       <Project>{c8f08b13-1584-4fdf-9adc-e9e78d815ff7}</Project>
       <Name>Unseen.MSO.Adaptors</Name>
@@ -61,6 +57,14 @@
     <ProjectReference Include="..\Unseen.MSO.Core.InfrastructureServices\Unseen.MSO.Core.InfrastructureServices.csproj">
       <Project>{132661c7-93e0-4777-a1be-2e0ca33ea5df}</Project>
       <Name>Unseen.MSO.Core.InfrastructureServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Unseen.MSO.Core.Repositories\Unseen.MSO.Core.Repositories.csproj">
+      <Project>{f80efd8d-de22-4be3-938b-e70d43e010e7}</Project>
+      <Name>Unseen.MSO.Core.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Unseen.MSO101.Adaptors\Unseen.MSO101.Adaptors.csproj">
+      <Project>{d8c764d3-de5a-4eb4-aa29-dc547927f2b3}</Project>
+      <Name>Unseen.MSO101.Adaptors</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

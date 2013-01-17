@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Avelo.MSO.Domain.RepositoriesFactory")]
+[assembly: AssemblyTitle("Unseen.MSO101.Bindings")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Avelo.MSO.Domain.RepositoriesFactory")]
+[assembly: AssemblyProduct("Unseen.MSO101.Bindings")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("201568fb-cbe5-45b8-be5d-b017961bd177")]
+[assembly: Guid("895900d7-c52a-4959-bac3-e7a53d661aca")]
 
 // Version information for an assembly consists of the following four values:
 //

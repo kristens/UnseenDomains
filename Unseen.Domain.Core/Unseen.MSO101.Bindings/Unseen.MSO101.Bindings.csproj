@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AB8F2B2D-077F-4FA1-8747-06C70A4425FA}</ProjectGuid>
+    <ProjectGuid>{D8BC8EF0-DFE8-4FCA-A0E3-7EAD5CBA3DDD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Avelo.MSO.Bindings</RootNamespace>
-    <AssemblyName>Avelo.MSO.Bindings</AssemblyName>
+    <RootNamespace>Unseen.MSO101.Bindings</RootNamespace>
+    <AssemblyName>Unseen.MSO101.Bindings</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -42,17 +42,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BindingConfiguration.cs" />
+    <Compile Include="UnseenBindings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Unseen.MSO.Adaptors\Unseen.MSO.Adaptors.csproj">
+      <Project>{c8f08b13-1584-4fdf-9adc-e9e78d815ff7}</Project>
+      <Name>Unseen.MSO.Adaptors</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Unseen.MSO.Core.Abstraction\Unseen.MSO.Core.Abstraction.csproj">
       <Project>{ab7d21fa-f2a2-4326-a0da-15f6a15eff22}</Project>
       <Name>Unseen.MSO.Core.Abstraction</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Unseen.MSO.Core.DTOs\Unseen.MSO.Core.DTOs.csproj">
+      <Project>{7ee18f07-9bf6-41a4-ae80-91ed272a5cfb}</Project>
+      <Name>Unseen.MSO.Core.DTOs</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Unseen.MSO.Core.InfrastructureServices\Unseen.MSO.Core.InfrastructureServices.csproj">
       <Project>{132661c7-93e0-4777-a1be-2e0ca33ea5df}</Project>
       <Name>Unseen.MSO.Core.InfrastructureServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Unseen.MSO.Core.Repositories\Unseen.MSO.Core.Repositories.csproj">
+      <Project>{f80efd8d-de22-4be3-938b-e70d43e010e7}</Project>
+      <Name>Unseen.MSO.Core.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Unseen.MSO101.Adaptors\Unseen.MSO101.Adaptors.csproj">
+      <Project>{d8c764d3-de5a-4eb4-aa29-dc547927f2b3}</Project>
+      <Name>Unseen.MSO101.Adaptors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Unseen.MSO101.Core.DTOs\Unseen.MSO101.Core.DTOs.csproj">
+      <Project>{34050564-5a15-4bb3-a635-243b53dff47b}</Project>
+      <Name>Unseen.MSO101.Core.DTOs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Unseen.MSO101.Domain.Core\Unseen.MSO101.Domain.Core.csproj">
+      <Project>{31c7ac52-63cc-4491-b679-8a895e5e3d77}</Project>
+      <Name>Unseen.MSO101.Domain.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Unseen.MSO101.ProductService\Unseen.MSO101.ProductService.csproj">
+      <Project>{30a7d520-4c03-4a95-ab66-462436e8c557}</Project>
+      <Name>Unseen.MSO101.ProductService</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

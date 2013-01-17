@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Unseen.Domain.Core;
-using Unseen.MSO.Core.Abstraction;
 using Unseen.MSO.Core.Abstraction.Intermediary;
 using Unseen.MSO.Core.DTOs;
 using Unseen.MSO.Core.DTOs.Intermediary;
-using Unseen.MSO.Core.InfrastructureServices;
-using Unseen.MSO.Domain.Factories;
 
 namespace Unseen.MSO.ApplicationServices.Intermediary
 {
@@ -17,17 +11,18 @@ namespace Unseen.MSO.ApplicationServices.Intermediary
     {
       private IIntermediaryAdaptor _IntermediaryAdaptor;
       private IIntermediarySolutionRepository _SolutionRespository;
-
+      private IIntermediaryProductService _intermediaryProductService;
 
       /// <summary>
       /// Construct, assume unity provides everything
       /// </summary>
       /// <param name="intermediaryAdaptor"></param>
       /// <param name="solutionRespository"></param>
-      public MortgageModellingService(IIntermediaryAdaptor intermediaryAdaptor, IIntermediarySolutionRepository solutionRespository)
+      public MortgageModellingService(IIntermediaryAdaptor intermediaryAdaptor, IIntermediarySolutionRepository solutionRespository, IIntermediaryProductService intermediaryProductService)
       {
         _IntermediaryAdaptor = intermediaryAdaptor;
         _SolutionRespository = solutionRespository;
+        _intermediaryProductService = intermediaryProductService;
 
         return;
       }
@@ -70,9 +65,7 @@ namespace Unseen.MSO.ApplicationServices.Intermediary
         var domainRequirement = _IntermediaryAdaptor.AdaptRequirement(requirement);
         var intermediaryDetails = _IntermediaryAdaptor.AdaptIntermediaryDetails(intermediaryDetailsDto);
 
-        var productService = InfrastructureFactory.CreateIntermediaryProductService();
-
-        var suitableProducts = productService.ListProducts(domainRequirement, intermediaryDetails);
+        var suitableProducts = _intermediaryProductService.ListProducts(domainRequirement, intermediaryDetails);
 
         var suitableDtoProducts = _IntermediaryAdaptor.AdaptProductSummary(suitableProducts);
 

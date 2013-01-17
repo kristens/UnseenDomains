@@ -64,13 +64,17 @@
       <Project>{680720dd-23bf-4561-9f05-3e1abace570e}</Project>
       <Name>Unseen.MSO.ApplicationServices.Intermediary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Unseen.MSO.Bindings\Unseen.MSO.Bindings.csproj">
+      <Project>{821ba300-d22f-4d0b-945a-e8345b4af139}</Project>
+      <Name>Unseen.MSO.Bindings</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Unseen.MSO.Core.DTOs\Unseen.MSO.Core.DTOs.csproj">
       <Project>{7ee18f07-9bf6-41a4-ae80-91ed272a5cfb}</Project>
       <Name>Unseen.MSO.Core.DTOs</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Unseen.MSO101.ApplicationServices.Intermediary\Unseen.MSO101.ApplicationServices.Intermediary.csproj">
-      <Project>{eccb379e-3b19-4fd4-b49f-225d72e655b4}</Project>
-      <Name>Unseen.MSO101.ApplicationServices.Intermediary</Name>
+    <ProjectReference Include="..\Unseen.MSO101.Bindings\Unseen.MSO101.Bindings.csproj">
+      <Project>{d8bc8ef0-dfe8-4fca-a0e3-7ead5cba3ddd}</Project>
+      <Name>Unseen.MSO101.Bindings</Name>
     </ProjectReference>
     <ProjectReference Include="..\Unseen.MSO101.Core.DTOs\Unseen.MSO101.Core.DTOs.csproj">
       <Project>{34050564-5a15-4bb3-a635-243b53dff47b}</Project>
@@ -79,6 +83,10 @@
     <ProjectReference Include="..\Unseen.MSO101.Domain.Core\Unseen.MSO101.Domain.Core.csproj">
       <Project>{31c7ac52-63cc-4491-b679-8a895e5e3d77}</Project>
       <Name>Unseen.MSO101.Domain.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Unseen.MSO101.ProductService\Unseen.MSO101.ProductService.csproj">
+      <Project>{30a7d520-4c03-4a95-ab66-462436e8c557}</Project>
+      <Name>Unseen.MSO101.ProductService</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Unseen.MSO.Domain.Factories")]
+[assembly: AssemblyTitle("Unseen.MSO.Bindings")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Unseen.MSO.Domain.Factories")]
+[assembly: AssemblyProduct("Unseen.MSO.Bindings")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c1fb4d3f-31c2-4537-8f17-c0866f62f69a")]
+[assembly: Guid("94375cf6-9324-4e28-a633-3bf36943a433")]
 
 // Version information for an assembly consists of the following four values:
 //

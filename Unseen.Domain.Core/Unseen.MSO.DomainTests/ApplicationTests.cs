@@ -1,8 +1,9 @@
 ﻿using System;
 using Unseen.MSO.ApplicationServices.Intermediary;
+using Unseen.MSO.Bindings;
 using Unseen.MSO.Core.DTOs;
 using Unseen.MSO.Core.DTOs.Intermediary;
-using Unseen.MSO101.ApplicationServices.Intermediary;
+using Unseen.MSO101.Bindings;
 using Unseen.MSO101.Core.DTOs;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -15,7 +16,8 @@ namespace Unseen.MSO.DomainTests {
     public void RetrieveSolutionSummary()
     {
 
-      var service = ServiceFactory.GetModellingService();
+      var bindings = new DefaultBindings();
+      var service = ServiceFactory.GetModellingService(bindings); 
       var owner = new IntermediaryUserDto("Fred Jones", "fsa1234");
       var targetCase = new IntermediaryCaseDto(Guid.NewGuid(),owner);
 
@@ -30,7 +32,8 @@ namespace Unseen.MSO.DomainTests {
     [TestMethod]
     public void RetrieveSolutionDetail()
     {
-      var service = ServiceFactory.GetModellingService();
+      var bindings = new DefaultBindings();
+      var service = ServiceFactory.GetModellingService(bindings); 
       var owner = new IntermediaryUserDto("Fred Jones", "fsa1234");
 
       var solutionDetail = service.GetSolution(Guid.NewGuid(), owner);
@@ -47,7 +50,8 @@ namespace Unseen.MSO.DomainTests {
     [TestMethod]
     public void ListSuitableProducts()
     {
-      var service = ServiceFactory.GetModellingService();
+      var bindings = new DefaultBindings();
+      var service = ServiceFactory.GetModellingService(bindings);
 
       var requirements = new MortgageRequirementDto();
       requirements.LoanAmount = 250000;
@@ -66,7 +70,8 @@ namespace Unseen.MSO.DomainTests {
     [TestMethod]
     public void TestShoeSizePresent()
     {
-      var service = UnseenServiceFactory.GetModellingService();
+      var bindings = new UnseenBindings();
+      var service = ServiceFactory.GetModellingService(bindings);
 
       var requirements = new UnseenMortgageRequirementDto();
       requirements.LoanAmount = 250000;
@@ -79,7 +84,7 @@ namespace Unseen.MSO.DomainTests {
       Assert.IsNotNull(suitableProducts, "Products should have been returned");
       Assert.IsTrue(suitableProducts.Count > 0, "AT least one product should have been returned.");
 
-      Assert.IsTrue(suitableProducts.Any( a => a.Name == "ShoeSize"), "Should have had one returned");
+      Assert.IsTrue(suitableProducts.Any( a => a.Name.Contains("ShoeSize")), "Should have had one returned");
 
       return;
     }

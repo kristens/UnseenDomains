@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Unseen.MSO101.ApplicationServices.Intermediary")]
+[assembly: AssemblyTitle("Unseen.MSO101.ProductService")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Unseen.MSO101.ApplicationServices.Intermediary")]
+[assembly: AssemblyProduct("Unseen.MSO101.ProductService")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c8f387cd-979d-40f0-94f5-a3a3013ad8be")]
+[assembly: Guid("1092d188-fbf5-447e-a9f8-a271bb7c95e4")]
 
 // Version information for an assembly consists of the following four values:
 //

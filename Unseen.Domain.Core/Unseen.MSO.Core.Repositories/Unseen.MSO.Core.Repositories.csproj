@@ -55,10 +55,6 @@
       <Project>{132661c7-93e0-4777-a1be-2e0ca33ea5df}</Project>
       <Name>Unseen.MSO.Core.InfrastructureServices</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Unseen.MSO.Domain.Factories\Unseen.MSO.Domain.InfrastructureFactories.csproj">
-      <Project>{ec5e4c9b-b29f-4d73-9a88-b173b83caa45}</Project>
-      <Name>Unseen.MSO.Domain.InfrastructureFactories</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Unseen.Domain.Core;
 
 namespace Unseen.MSO.Core.Abstraction {
-  public interface ISolutionRepository {
+  public interface ISolutionRepository1 {
 
     List<SolutionSummary> List(aCase theCase);
 

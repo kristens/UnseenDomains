@@ -4,15 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Unseen.Domain.Core;
+using Unseen.MSO.Core.Abstraction.Consumer;
 using Unseen.MSO.Core.Abstraction.Intermediary;
 using Unseen.MSO.Core.InfrastructureServices;
-using Unseen.MSO.Domain.Factories;
 
 namespace Unseen.MSO.Core.Repositories
 {
-  public class MortgageSolutionRepository: IIntermediarySolutionRepository
-{
+  public class MortgageSolutionRepository: IIntermediarySolutionRepository, IConsumerSolutionRepository
+  {
 
+    private IIntermediaryProductService _IntermediaryProductService;
+    private IConsumerProductService _ConsumerProductService;
+
+    public MortgageSolutionRepository( IIntermediaryProductService intermediaryProductService, IConsumerProductService consumerProductService)
+    {
+      _IntermediaryProductService = intermediaryProductService;
+      _ConsumerProductService = consumerProductService;
+
+      return;
+    }
+   
     /// <summary>
     /// 
     /// </summary>
@@ -37,19 +48,22 @@ namespace Unseen.MSO.Core.Repositories
 
     Solution IIntermediarySolutionRepository.Get(Guid solutionId)
     {
-      // we would go to a database and get all these, maing user the owners match
+      // we would go to a database and get all these, ensuring user and the owner match
       var requirement = new MortgageRequirement(Guid.NewGuid(), 250000, 90, 400000, false, DateTime.Now.AddDays(-45));
 
-      var productService = InfrastructureFactory.CreateIntermediaryProductService();
-      var product = productService.GetProduct(Guid.NewGuid());
+      var product = _IntermediaryProductService.GetProduct(Guid.NewGuid());
 
       var productList = new List<Product>{product};
 
       var solution = new MortgageSolution(productList, requirement);
       
-      // retrieve the solution
+ 
       return solution;
     }
 
+
+    List<Solution> IConsumerSolutionRepository.List(aCase theCase) {
+      throw new NotImplementedException();
+    }
   }
 }
