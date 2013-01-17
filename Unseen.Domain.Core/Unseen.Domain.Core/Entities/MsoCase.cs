@@ -52,7 +52,9 @@ namespace Unseen.Domain.Core.Entities {
 
     public virtual Guid AddSolution(Solution solution)
     {
+      
       return Guid.NewGuid();
     }
+
   }
 }

@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using Unseen.Domain.Core.Abstractions;
-using Unseen.Domain.Core.Abstractions.Intermediary;
 using Unseen.Domain.Core.Entities;
 using Unseen.MSO.Core.Abstraction;
 using Unseen.MSO.Core.DTOs;
 using Unseen.MSO.Core.DTOs.Intermediary;
 
 namespace Unseen.MSO.Adaptors {
-  public class IntermediaryMortgageAdaptor : IIntermediaryAdaptor
+  public class IntermediaryMortgageAdaptor : IAdaptor
   {
-    private readonly IIntermediaryMortgageProductService _productService;
+    private readonly IProductService _productService;
 
-    public IntermediaryMortgageAdaptor(IIntermediaryMortgageProductService productService)
+    public IntermediaryMortgageAdaptor(IProductService productService)
     {
       _productService = productService;
       return;
@@ -25,10 +24,10 @@ namespace Unseen.MSO.Adaptors {
 
       foreach (var product in domainSolution.Products)
       {
-        dtoProducts.Add(((IIntermediaryAdaptor)this).AdaptProduct(product));
+        dtoProducts.Add(((IAdaptor)this).AdaptProduct(product));
       }
 
-      var dtoRequirement = ((IIntermediaryAdaptor)this).AdaptRequirement(domainSolution.Requirement);
+      var dtoRequirement = ((IAdaptor)this).AdaptRequirement(domainSolution.Requirement);
 
       var dtoSolution = new MortgageSolutionDto(dtoProducts, (MortgageRequirementDto) dtoRequirement);
 
@@ -75,20 +74,13 @@ namespace Unseen.MSO.Adaptors {
     }
 
     Requirement IAdaptor.AdaptRequirement(RequirementDto dtoRequirement) {
-      var mortgageRequirementDto = (MortgageRequirementDto)dtoRequirement;
+      var mortgageRequirementDto = (IntermediaryRequirementDto)dtoRequirement;
 
-      var requirement = new MortgageRequirement(mortgageRequirementDto.Id, mortgageRequirementDto.LoanAmount, mortgageRequirementDto.TermInMonths,
+      var requirement = new IntermediaryRequirement(mortgageRequirementDto.MortgageClub, mortgageRequirementDto.Id, mortgageRequirementDto.LoanAmount, mortgageRequirementDto.TermInMonths,
                                                       mortgageRequirementDto.PurchasePrice, mortgageRequirementDto.Recommended,
                                                       mortgageRequirementDto.CreatedDate,_productService);
 
       return requirement;
-    }
-
-    IntermediaryDetails IIntermediaryAdaptor.AdaptIntermediaryDetails(IntermediaryDetailsDto intermediaryDetailsDto)
-    {
-      var intermediaryDetails = new IntermediaryDetails(intermediaryDetailsDto.MortgageClub);
-
-      return intermediaryDetails;
     }
 
     List<ProductSummaryDto> IAdaptor.AdaptProductSummary(List<ProductSummary> domainProductSummary)

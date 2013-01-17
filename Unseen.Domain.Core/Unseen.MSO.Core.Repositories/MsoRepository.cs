@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using Unseen.Domain.Core.Abstractions;
-using Unseen.Domain.Core.Abstractions.Consumer;
-using Unseen.Domain.Core.Abstractions.Intermediary;
 using Unseen.Domain.Core.Entities;
 
 namespace Unseen.MSO.Core.Repositories {
@@ -15,13 +11,11 @@ namespace Unseen.MSO.Core.Repositories {
   /// </summary>
   public class MsoRepository : IOwnerRepository, ICaseRepository 
   {
-    private IIntermediaryMortgageProductService _IntermediaryProductService;
-    private IConsumerProductService _ConsumerProductService;
+    private IProductService _ProductService;
 
-    public MsoRepository(IIntermediaryMortgageProductService intermediaryProductService, IConsumerProductService consumerProductService)
+    public MsoRepository(IProductService productService)
     {
-      _IntermediaryProductService = intermediaryProductService;
-      _ConsumerProductService = consumerProductService;
+      _ProductService = productService;
 
       return;
     }
@@ -69,7 +63,7 @@ namespace Unseen.MSO.Core.Repositories {
       // we would go to a database and get all these, ensuring user and the owner match
       var requirement = new MortgageRequirement(Guid.NewGuid(), 250000, 90, 400000, false, DateTime.Now.AddDays(-45));
 
-      var product = _IntermediaryProductService.GetProductDetails(Guid.NewGuid());
+      var product = _ProductService.GetProductDetails(Guid.NewGuid());
 
       var productList = new List<Product> { product };
 

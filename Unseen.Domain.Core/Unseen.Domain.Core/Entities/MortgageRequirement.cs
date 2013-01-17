@@ -33,5 +33,7 @@ namespace Unseen.Domain.Core.Entities {
     {
       return _productService.ListProducts(this);
     }
+
+    // Load the requirement from the database, but how do we know whats what?
   }
 }

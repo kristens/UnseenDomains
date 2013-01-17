@@ -20,9 +20,13 @@ namespace Unseen.MSO.Core.DTOs {
 
       return;
     }
+
     public Decimal LoanAmount { get;  set; }
+    
     public int TermInMonths { get;  set; }
+    
     public Decimal PurchasePrice { get;  set; }
+    
     public bool Recommended { get;  set; }
   }
 }

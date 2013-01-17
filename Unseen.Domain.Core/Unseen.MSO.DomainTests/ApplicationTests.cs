@@ -55,12 +55,13 @@ namespace Unseen.MSO.DomainTests {
       var bindings = new DefaultBindings();
       var service = IntermediaryFactory.GetModellingService(bindings);
 
-      var requirements = new MortgageRequirementDto();
+      var requirements = new IntermediaryRequirementDto();
       requirements.LoanAmount = 250000;
       requirements.PurchasePrice = 400000;
       requirements.TermInMonths = 256;
+      requirements.MortgageClub = "Freds Business";
 
-      var suitableProducts = service.ListSuitableProduct(requirements, new IntermediaryDetailsDto("fred's club"));
+      var suitableProducts = service.ListSuitableProduct(requirements);
 
       Assert.IsNotNull(suitableProducts, "Products should have been returned");
       Assert.IsTrue(suitableProducts.Count > 0, "AT least one product should have been returned.");
@@ -80,8 +81,9 @@ namespace Unseen.MSO.DomainTests {
       requirements.PurchasePrice = 400000;
       requirements.TermInMonths = 256;
       requirements.ShoeSize = 23;
+      requirements.MortgageClub = "Freds Business";
 
-      var suitableProducts = service.ListSuitableProduct(requirements, new IntermediaryDetailsDto("fred's club"));
+      var suitableProducts = service.ListSuitableProduct(requirements);
 
       Assert.IsNotNull(suitableProducts, "Products should have been returned");
       Assert.IsTrue(suitableProducts.Count > 0, "AT least one product should have been returned.");

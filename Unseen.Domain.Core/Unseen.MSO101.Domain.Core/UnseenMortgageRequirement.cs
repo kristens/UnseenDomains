@@ -9,19 +9,19 @@ using Unseen.Domain.Core.Entities;
 
 namespace Unseen.MSO101.Domain.Core
 {
-    public class UnseenMortgageRequirement: MortgageRequirement
+    public class UnseenMortgageRequirement: IntermediaryRequirement
     {
 
-      public UnseenMortgageRequirement(int shoeSize, Guid id, decimal loanAmount, int termInMonths, decimal purchasePrice, bool recommended, DateTime createdDate, IProductService productService):
-        base(id, loanAmount, termInMonths,  purchasePrice, recommended, createdDate, productService)
+      public UnseenMortgageRequirement(int shoeSize, string mortgageClub, Guid id, decimal loanAmount, int termInMonths, decimal purchasePrice, bool recommended, DateTime createdDate, IProductService productService):
+        base(mortgageClub, id, loanAmount, termInMonths, purchasePrice, recommended, createdDate, productService)
       {
         ShoeSize = shoeSize;
 
         return;
       }
 
-      public UnseenMortgageRequirement(int shoeSize, Guid id, decimal loanAmount, int termInMonths, decimal purchasePrice, bool recommended, DateTime createdDate) :
-        base(id, loanAmount, termInMonths, purchasePrice, recommended, createdDate) {
+      public UnseenMortgageRequirement(int shoeSize, string mortgageClub, Guid id, decimal loanAmount, int termInMonths, decimal purchasePrice, bool recommended, DateTime createdDate) :
+        base(mortgageClub, id, loanAmount, termInMonths, purchasePrice, recommended, createdDate) {
         ShoeSize = shoeSize;
 
         return;

@@ -9,5 +9,12 @@ namespace Unseen.Domain.Core.Entities {
       return;
     }
 
+    /// <summary>
+    /// confirm that the solution is valid
+    /// </summary>
+    /// <returns></returns>
+    public override bool IsValid() {
+      throw new System.NotImplementedException();
+    }
   }
 }

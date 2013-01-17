@@ -39,15 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstractions\Consumer\IConsumerProductService.cs" />
     <Compile Include="Abstractions\ICaseRepository.cs" />
-    <Compile Include="Abstractions\Intermediary\IIntermediaryMortgageProductService.cs" />
     <Compile Include="Abstractions\IOwnerRepository.cs" />
     <Compile Include="Abstractions\IProductService.cs" />
+    <Compile Include="Entities\IntermediaryRequirement.cs" />
     <Compile Include="Entities\MsoCase.cs" />
     <Compile Include="Entities\CaseSummary.cs" />
     <Compile Include="Entities\ConsumerOwner.cs" />
-    <Compile Include="Entities\IntermediaryDetails.cs" />
     <Compile Include="Entities\IntermediaryOwner.cs" />
     <Compile Include="Entities\MortgageProduct.cs" />
     <Compile Include="Entities\MortgageProductSummary.cs" />

@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="CaseDto.cs" />
     <Compile Include="CaseSummaryDTO.cs" />
+    <Compile Include="Intermediary\IntermediaryRequirementDto.cs" />
     <Compile Include="Intermediary\IntermediaryUserDto.cs" />
     <Compile Include="Intermediary\IntermediaryDetailsDto.cs" />
     <Compile Include="MortgageProductDto.cs" />

@@ -1,8 +1,6 @@
 ﻿
 using Ninject.Modules;
 using Unseen.Domain.Core.Abstractions;
-using Unseen.Domain.Core.Abstractions.Consumer;
-using Unseen.Domain.Core.Abstractions.Intermediary;
 using Unseen.MSO.Adaptors;
 using Unseen.MSO.Core.Abstraction;
 using Unseen.MSO.Core.InfrastructureServices;
@@ -14,16 +12,12 @@ namespace Unseen.MSO.Bindings
     {
       public override void Load()
       {
-        Bind<IConsumerProductService>().To<MortgageProductService>();
-        Bind<IAdaptor>().To<ConsumerMortgageAdaptor>();
+       
+        Bind<IAdaptor>().To<IntermediaryMortgageAdaptor>();
 
-
-        Bind<IIntermediaryMortgageProductService>().To<MortgageProductService>();
-        Bind<IIntermediaryAdaptor>().To<IntermediaryMortgageAdaptor>();
-
+        Bind<IProductService>().To<IntermediaryMortgageProductService>();
         Bind<ICaseRepository>().To<MsoRepository>();
         Bind<IOwnerRepository>().To<MsoRepository>();
-        Bind<IProductService>().To<MortgageProductService>();
         return;
       }
     }

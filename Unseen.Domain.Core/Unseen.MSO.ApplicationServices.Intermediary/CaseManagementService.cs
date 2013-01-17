@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ninject.Modules;
-using Unseen.Domain.Core.Abstractions;
-using Unseen.Domain.Core.Abstractions.Intermediary;
+﻿using Unseen.Domain.Core.Abstractions;
 
 namespace Unseen.MSO.ApplicationServices.Intermediary {
   public class CaseManagementService
