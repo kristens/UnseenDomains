@@ -17,9 +17,10 @@ namespace Unseen.MSO.DomainTests {
     {
 
       var bindings = new DefaultBindings();
-      var service = ServiceFactory.GetModellingService(bindings); 
-      var owner = new IntermediaryUserDto("Fred Jones", "fsa1234");
-      var targetCase = new IntermediaryCaseDto(Guid.NewGuid(),owner);
+      var service = IntermediaryFactory.GetModellingService(bindings);
+
+      var owner = new IntermediaryUserDto("Fred Jones", "fsa1234", Guid.NewGuid());
+      var targetCase = new CaseDto(Guid.NewGuid(), owner);
 
       var summaries = service.ListSolutionsForCase(targetCase);
 
@@ -33,10 +34,11 @@ namespace Unseen.MSO.DomainTests {
     public void RetrieveSolutionDetail()
     {
       var bindings = new DefaultBindings();
-      var service = ServiceFactory.GetModellingService(bindings); 
-      var owner = new IntermediaryUserDto("Fred Jones", "fsa1234");
+      var service = IntermediaryFactory.GetModellingService(bindings);
+      var owner = new IntermediaryUserDto("Fred Jones", "fsa1234", Guid.NewGuid());
+      var targetCase = new CaseDto(Guid.NewGuid(), owner);
 
-      var solutionDetail = service.GetSolution(Guid.NewGuid(), owner);
+      var solutionDetail = service.GetSolution(Guid.NewGuid(), targetCase);
 
       Assert.IsNotNull(solutionDetail, "Should have had a solution");
       Assert.IsNotNull(solutionDetail.Products, "Should have had some products returned");
@@ -51,7 +53,7 @@ namespace Unseen.MSO.DomainTests {
     public void ListSuitableProducts()
     {
       var bindings = new DefaultBindings();
-      var service = ServiceFactory.GetModellingService(bindings);
+      var service = IntermediaryFactory.GetModellingService(bindings);
 
       var requirements = new MortgageRequirementDto();
       requirements.LoanAmount = 250000;
@@ -71,7 +73,7 @@ namespace Unseen.MSO.DomainTests {
     public void TestShoeSizePresent()
     {
       var bindings = new UnseenBindings();
-      var service = ServiceFactory.GetModellingService(bindings);
+      var service = IntermediaryFactory.GetModellingService(bindings);
 
       var requirements = new UnseenMortgageRequirementDto();
       requirements.LoanAmount = 250000;
@@ -88,5 +90,6 @@ namespace Unseen.MSO.DomainTests {
 
       return;
     }
+
   }
 }

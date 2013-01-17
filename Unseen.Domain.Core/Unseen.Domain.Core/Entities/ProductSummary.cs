@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace Unseen.Domain.Core {
+namespace Unseen.Domain.Core.Entities {
   public abstract class ProductSummary {
     protected ProductSummary(Guid id, string name, string description)
     {

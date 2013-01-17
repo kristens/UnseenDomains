@@ -1,7 +1,6 @@
 ﻿using System;
 
-
-namespace Unseen.Domain.Core {
+namespace Unseen.Domain.Core.Entities {
   public abstract class SolutionSummary {
 
     protected SolutionSummary(Guid id, DateTime createdDate, bool progessed)

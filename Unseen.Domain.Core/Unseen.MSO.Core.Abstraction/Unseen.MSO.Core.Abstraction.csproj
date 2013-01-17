@@ -39,15 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Consumer\IConsumerProductService.cs" />
-    <Compile Include="Consumer\IConsumerRepository.cs" />
-    <Compile Include="Consumer\IConsumerSolutionRepository.cs" />
     <Compile Include="IAdaptor.cs" />
-    <Compile Include="Intermediary\IIntermediaryAdaptor.cs" />
-    <Compile Include="Intermediary\IIntermediaryProductService.cs" />
-    <Compile Include="Intermediary\IIntermediaryRepository.cs" />
-    <Compile Include="Intermediary\IIntermediarySolutionRepository.cs" />
-    <Compile Include="ISolutionRepository.cs" />
+    <Compile Include="IIntermediaryAdaptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

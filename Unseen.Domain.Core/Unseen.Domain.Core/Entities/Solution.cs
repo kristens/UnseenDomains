@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Unseen.Domain.Core {
+namespace Unseen.Domain.Core.Entities {
   public abstract class Solution {
 
 

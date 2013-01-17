@@ -6,5 +6,14 @@ using System.Threading.Tasks;
 
 namespace Unseen.MSO.Core.DTOs {
   public abstract class UserDto {
+
+    public UserDto(Guid id)
+    {
+      Id = id;
+      return;
+    }
+
+    public Guid Id { get; private set; }
+  
   }
 }

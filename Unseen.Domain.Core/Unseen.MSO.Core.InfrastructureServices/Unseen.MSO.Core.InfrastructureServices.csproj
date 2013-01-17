@@ -39,18 +39,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IntermediaryRepository.cs" />
     <Compile Include="MortgageProductService.cs" />
+    <Compile Include="ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Unseen.Domain.Core\Unseen.MSO.Domain.Core.csproj">
       <Project>{c400fe22-bbcf-4515-b58a-105b3a23a334}</Project>
       <Name>Unseen.MSO.Domain.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Unseen.MSO.Core.Abstraction\Unseen.MSO.Core.Abstraction.csproj">
-      <Project>{ab7d21fa-f2a2-4326-a0da-15f6a15eff22}</Project>
-      <Name>Unseen.MSO.Core.Abstraction</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

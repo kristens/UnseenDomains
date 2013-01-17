@@ -1,17 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Unseen.Domain.Core;
+using Unseen.Domain.Core.Abstractions;
+using Unseen.Domain.Core.Abstractions.Intermediary;
+using Unseen.Domain.Core.Entities;
 using Unseen.MSO.Core.Abstraction;
-using Unseen.MSO.Core.Abstraction.Intermediary;
 using Unseen.MSO.Core.DTOs;
 using Unseen.MSO.Core.DTOs.Intermediary;
 
 namespace Unseen.MSO.Adaptors {
-  public class IntermediaryMortgageAdaptor : IIntermediaryAdaptor {
+  public class IntermediaryMortgageAdaptor : IIntermediaryAdaptor
+  {
+    private readonly IIntermediaryMortgageProductService _productService;
 
+    public IntermediaryMortgageAdaptor(IIntermediaryMortgageProductService productService)
+    {
+      _productService = productService;
+      return;
+      
+    }
     SolutionDto IAdaptor.AdaptSolution(Solution domainSolution)
     {
 
@@ -27,43 +33,6 @@ namespace Unseen.MSO.Adaptors {
       var dtoSolution = new MortgageSolutionDto(dtoProducts, (MortgageRequirementDto) dtoRequirement);
 
       return dtoSolution;
-    }
-
-    Solution IAdaptor.AdaptSolution(SolutionDto dtoSolution) {
-      var products = new List<Product>();
-
-      foreach (var product in dtoSolution.Products) {
-        products.Add(((IIntermediaryAdaptor)this).AdaptProduct(product));
-      }
-
-      var requirement = ((IIntermediaryAdaptor)this).AdaptRequirement(dtoSolution.Requirement);
-
-      var solution = new MortgageSolution(products, (MortgageRequirement)requirement);
-
-      return solution;
-    }
-
-    aCase IAdaptor.AdaptCase(CaseDto caseDto)
-    {
-      var intermediaryDto = (IntermediaryCaseDto) caseDto;
-      var dtoIntermediary = (IntermediaryUserDto) caseDto.Owner;
-
-      var intermediaryOwner = new IntermediaryUser(dtoIntermediary.Name, dtoIntermediary.Id);
-      var intermediaryCase = new IntermediaryCase(intermediaryDto.Id, intermediaryOwner);
-
-      return intermediaryCase;
-    }
-
-    CaseDto IAdaptor.AdaptCase(aCase domainCase)
-    {
-
-      var intermediaryDomainCase = (IntermediaryCase) domainCase;
-      var intermediaryDomainUser = (IntermediaryUser)domainCase.User;
-
-      var ownerDto = new IntermediaryUserDto(intermediaryDomainUser.Name, intermediaryDomainUser.Id);
-      var dto = new IntermediaryCaseDto(intermediaryDomainCase.Id, ownerDto);
-
-      return dto;
     }
 
     List<SolutionSummaryDto> IAdaptor.AdaptionSolutionSummary(List<SolutionSummary> domainSolutionSummary)
@@ -83,24 +52,6 @@ namespace Unseen.MSO.Adaptors {
       return dtoSummaryList;
     }
 
-    UserDto IAdaptor.AdaptOwner(User domainUser)
-    {
-
-      var intermediary = (IntermediaryUser)domainUser;
-
-      var dtoIntermediary = new IntermediaryUserDto(intermediary.Name, intermediary.Id);
-
-      return dtoIntermediary;
-    }
-
-    User IAdaptor.AdaptOwner(UserDto ownerDto)
-    {
-      var dtoIntermediary = (IntermediaryUserDto) ownerDto;
-      var domainIntermediary = new IntermediaryUser(dtoIntermediary.Name, dtoIntermediary.Id);
-
-      return domainIntermediary;
-    }
-
     ProductDto IAdaptor.AdaptProduct(Product domainProduct)
     {
       var mortgageProduct = (MortgageProduct) domainProduct;
@@ -109,15 +60,6 @@ namespace Unseen.MSO.Adaptors {
                                               mortgageProduct.Name, mortgageProduct.Description);
 
       return dtoProduct;
-    }
-
-    Product IAdaptor.AdaptProduct(ProductDto dtoProduct) {
-      var mortgageProductDto = (MortgageProductDto) dtoProduct;
-
-      var domainProduct = new MortgageProduct(mortgageProductDto.ErcApply, mortgageProductDto.InterestRate, mortgageProductDto.Id,
-                                              mortgageProductDto.Name, mortgageProductDto.Description);
-
-      return domainProduct;
     }
 
     RequirementDto IAdaptor.AdaptRequirement(Requirement domainRequirement)
@@ -137,7 +79,7 @@ namespace Unseen.MSO.Adaptors {
 
       var requirement = new MortgageRequirement(mortgageRequirementDto.Id, mortgageRequirementDto.LoanAmount, mortgageRequirementDto.TermInMonths,
                                                       mortgageRequirementDto.PurchasePrice, mortgageRequirementDto.Recommended,
-                                                      mortgageRequirementDto.CreatedDate);
+                                                      mortgageRequirementDto.CreatedDate,_productService);
 
       return requirement;
     }
@@ -162,6 +104,10 @@ namespace Unseen.MSO.Adaptors {
       }
 
       return productSummaries;
+    }
+
+    List<CaseSummaryDTO> IAdaptor.AdaptCaseSummary(List<CaseSummary> domainCaseSummaries) {
+      throw new NotImplementedException();
     }
   }
 }

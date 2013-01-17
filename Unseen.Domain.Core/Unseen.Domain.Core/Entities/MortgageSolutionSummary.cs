@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Unseen.Domain.Core {
-  public class MortgageRequirement: Requirement {
+namespace Unseen.Domain.Core.Entities {
+  public class MortgageSolutionSummary : SolutionSummary {
 
-    public MortgageRequirement(Guid id, decimal loanAmount, int termInMonths, decimal purchasePrice, bool recommended, DateTime createdDate)
-      : base(id, createdDate)
+    public MortgageSolutionSummary(Guid id, decimal loanAmount, int termInMonths, decimal purchasePrice, bool recommended, DateTime createdDate, bool progressed): base(id, createdDate, progressed)
     {
       LoanAmount = loanAmount;
       TermInMonths = termInMonths;

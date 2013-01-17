@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace Unseen.MSO.Core.DTOs.Intermediary {
   public class IntermediaryUserDto : UserDto {
 
-    public IntermediaryUserDto(string name, string id)
+    public IntermediaryUserDto(string name, string fsaNumber, Guid id): base(id)
     {
       Name = name;
-      Id = id;
+      FsaNumber = fsaNumber;
 
       return;
     }
@@ -18,6 +18,6 @@ namespace Unseen.MSO.Core.DTOs.Intermediary {
 
     public string Name { get; private set; }
 
-    public string Id { get; private set; }
+    public string FsaNumber { get; private set; }
   }
 }

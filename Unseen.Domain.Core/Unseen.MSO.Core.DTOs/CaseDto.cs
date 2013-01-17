@@ -4,23 +4,21 @@ using System.Linq;
 using System.Text;
 
 namespace Unseen.MSO.Core.DTOs {
-  public abstract class CaseDto {
+  public class CaseDto {
 
-    protected CaseDto()
+    public CaseDto()
     {
       
     }
 
-    protected CaseDto(Guid id, UserDto owner)
+    public CaseDto(Guid id, UserDto owner)
     {
       Id = id;
       Owner = owner;
-
       return;
     }
 
-    public Guid Id { get; set; }
-
-    public UserDto Owner { get; set; }
+    public Guid Id { get; private set; }
+    public UserDto Owner { get; private set; }
   }
 }

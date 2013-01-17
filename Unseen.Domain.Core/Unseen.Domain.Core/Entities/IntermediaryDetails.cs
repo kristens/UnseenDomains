@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Unseen.Domain.Core {
+﻿namespace Unseen.Domain.Core.Entities {
   public class IntermediaryDetails {
 
     public IntermediaryDetails(string mortgageClub)

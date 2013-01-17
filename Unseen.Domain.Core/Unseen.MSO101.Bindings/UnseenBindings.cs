@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ninject.Modules;
+﻿using Ninject.Modules;
+using Unseen.Domain.Core.Abstractions;
+using Unseen.Domain.Core.Abstractions.Consumer;
+using Unseen.Domain.Core.Abstractions.Intermediary;
 using Unseen.MSO.Adaptors;
 using Unseen.MSO.Core.Abstraction;
-using Unseen.MSO.Core.Abstraction.Consumer;
-using Unseen.MSO.Core.Abstraction.Intermediary;
-using Unseen.MSO.Core.InfrastructureServices;
 using Unseen.MSO.Core.Repositories;
 using Unseen.MSO101.Adaptors;
-using Unseen.MSO101.Core.DTOs;
 using Unseen.MSO101.ProductService;
 
 namespace Unseen.MSO101.Bindings
@@ -19,17 +13,17 @@ namespace Unseen.MSO101.Bindings
     public class UnseenBindings: NinjectModule
     {
       public override void Load() {
-        Bind<IConsumerSolutionRepository>().To<MortgageSolutionRepository>();
-        Bind<IConsumerProductService>().To<MortgageProductService>();
+        Bind<IConsumerProductService>().To<UnseenProductService>();
         Bind<IAdaptor>().To<ConsumerMortgageAdaptor>();
 
-
-        Bind<IIntermediarySolutionRepository>().To<MortgageSolutionRepository>();
-        Bind<IIntermediaryProductService>().To<UnseenProductService>();
-        Bind<IIntermediaryRepository>().To<IntermediaryRepository>();
+        Bind<IIntermediaryMortgageProductService>().To<UnseenProductService>();
         Bind<IntermediaryMortgageAdaptor>().To<UnseenMortgageAdaptor>();
         Bind<IIntermediaryAdaptor>().To<UnseenMortgageAdaptor>();
 
+        Bind<IProductService>().To<UnseenProductService>();
+        Bind<ICaseRepository>().To<MsoRepository>();
+        Bind<IOwnerRepository>().To<MsoRepository>();
+        
         return;
       }
     }

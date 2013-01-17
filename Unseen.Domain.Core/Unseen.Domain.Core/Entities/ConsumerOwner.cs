@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Unseen.Domain.Core.Abstractions;
 
-namespace Unseen.Domain.Core {
-  public class ConsumerUser: User {
+namespace Unseen.Domain.Core.Entities {
+  public class ConsumerOwner: Owner
+  {
 
-    public ConsumerUser(string userName)
+
+    public ConsumerOwner(string userName, Guid id, ICaseRepository caseRepository): base (caseRepository, id)
     {
       UserName = userName;
 
@@ -23,11 +22,11 @@ namespace Unseen.Domain.Core {
     /// <returns></returns>
     public override bool Equals(object obj) {
 
-      if ((obj == null) || (!(obj is ConsumerUser))) {
+      if ((obj == null) || (!(obj is ConsumerOwner))) {
         return false;
       }
 
-      return (string.Compare(UserName, ((ConsumerUser)obj).UserName, StringComparison.CurrentCultureIgnoreCase) == 0);
+      return (string.Compare(UserName, ((ConsumerOwner)obj).UserName, StringComparison.CurrentCultureIgnoreCase) == 0);
     }
 
 

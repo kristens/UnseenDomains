@@ -40,8 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CaseDto.cs" />
+    <Compile Include="CaseSummaryDTO.cs" />
     <Compile Include="Intermediary\IntermediaryUserDto.cs" />
-    <Compile Include="Intermediary\IntermediaryCaseDto.cs" />
     <Compile Include="Intermediary\IntermediaryDetailsDto.cs" />
     <Compile Include="MortgageProductDto.cs" />
     <Compile Include="MortgageProductSummaryDto.cs" />

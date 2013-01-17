@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace Unseen.Domain.Core {
+namespace Unseen.Domain.Core.Entities {
   public class MortgageProductSummary : ProductSummary {
 
     public MortgageProductSummary(bool ercApply, decimal interestRate, Guid id, string name, string description)

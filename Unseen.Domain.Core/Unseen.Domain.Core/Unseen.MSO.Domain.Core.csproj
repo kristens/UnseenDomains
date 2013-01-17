@@ -39,27 +39,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ACase.cs" />
-    <Compile Include="ConsumerCase.cs" />
-    <Compile Include="ConsumerUser.cs" />
-    <Compile Include="IntermediaryCase.cs" />
-    <Compile Include="IntermediaryDetails.cs" />
-    <Compile Include="IntermediaryUser.cs" />
-    <Compile Include="MortgageProduct.cs" />
-    <Compile Include="MortgageProductSummary.cs" />
-    <Compile Include="MortgageRequirement.cs" />
-    <Compile Include="MortgageSolution.cs" />
-    <Compile Include="MortgageSolutionSummary.cs" />
-    <Compile Include="User.cs" />
-    <Compile Include="Product.cs" />
-    <Compile Include="ProductSummary.cs" />
+    <Compile Include="Abstractions\Consumer\IConsumerProductService.cs" />
+    <Compile Include="Abstractions\ICaseRepository.cs" />
+    <Compile Include="Abstractions\Intermediary\IIntermediaryMortgageProductService.cs" />
+    <Compile Include="Abstractions\IOwnerRepository.cs" />
+    <Compile Include="Abstractions\IProductService.cs" />
+    <Compile Include="Entities\MsoCase.cs" />
+    <Compile Include="Entities\CaseSummary.cs" />
+    <Compile Include="Entities\ConsumerOwner.cs" />
+    <Compile Include="Entities\IntermediaryDetails.cs" />
+    <Compile Include="Entities\IntermediaryOwner.cs" />
+    <Compile Include="Entities\MortgageProduct.cs" />
+    <Compile Include="Entities\MortgageProductSummary.cs" />
+    <Compile Include="Entities\MortgageRequirement.cs" />
+    <Compile Include="Entities\MortgageSolution.cs" />
+    <Compile Include="Entities\MortgageSolutionSummary.cs" />
+    <Compile Include="Entities\Owner.cs" />
+    <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\ProductSummary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Requirements.cs" />
-    <Compile Include="Solution.cs" />
-    <Compile Include="SolutionSummary.cs" />
+    <Compile Include="Entities\Requirements.cs" />
+    <Compile Include="Entities\Solution.cs" />
+    <Compile Include="Entities\SolutionSummary.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Core.cd" />
+    <None Include="Entities\Core.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

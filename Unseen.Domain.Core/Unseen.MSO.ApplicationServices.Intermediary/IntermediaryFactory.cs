@@ -8,12 +8,10 @@ using System.Threading.Tasks;
 using Ninject;
 using Ninject.Modules;
 using Unseen.MSO.Adaptors;
-using Unseen.MSO.Core.Abstraction;
-using Unseen.MSO.Core.Abstraction.Intermediary;
 using Unseen.MSO.Core.Repositories;
 
 namespace Unseen.MSO.ApplicationServices.Intermediary {
-  public static class ServiceFactory
+  public static class IntermediaryFactory
   {
 
     public static MortgageModellingService GetModellingService(NinjectModule bindings)

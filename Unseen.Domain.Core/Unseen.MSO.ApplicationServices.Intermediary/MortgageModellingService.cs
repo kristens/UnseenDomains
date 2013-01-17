@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Unseen.Domain.Core;
-using Unseen.MSO.Core.Abstraction.Intermediary;
+using Unseen.Domain.Core.Abstractions;
+using Unseen.Domain.Core.Abstractions.Intermediary;
+using Unseen.MSO.Core.Abstraction;
 using Unseen.MSO.Core.DTOs;
 using Unseen.MSO.Core.DTOs.Intermediary;
 
@@ -9,21 +10,21 @@ namespace Unseen.MSO.ApplicationServices.Intermediary
 {
     public class MortgageModellingService
     {
-      private IIntermediaryAdaptor _IntermediaryAdaptor;
-      private IIntermediarySolutionRepository _SolutionRespository;
-      private IIntermediaryProductService _intermediaryProductService;
+      private readonly IIntermediaryAdaptor _IntermediaryAdaptor;
+      private readonly IIntermediaryMortgageProductService _intermediaryProductService;
+      private readonly IOwnerRepository _ownerRepository; 
 
       /// <summary>
-      /// Construct, assume unity provides everything
+      /// construct
       /// </summary>
       /// <param name="intermediaryAdaptor"></param>
-      /// <param name="solutionRespository"></param>
-      public MortgageModellingService(IIntermediaryAdaptor intermediaryAdaptor, IIntermediarySolutionRepository solutionRespository, IIntermediaryProductService intermediaryProductService)
+      /// <param name="intermediaryProductService"></param>
+      /// <param name="ownerRepository"></param>
+      public MortgageModellingService(IIntermediaryAdaptor intermediaryAdaptor, IIntermediaryMortgageProductService intermediaryProductService, IOwnerRepository ownerRepository)
       {
         _IntermediaryAdaptor = intermediaryAdaptor;
-        _SolutionRespository = solutionRespository;
         _intermediaryProductService = intermediaryProductService;
-
+        _ownerRepository = ownerRepository;
         return;
       }
 
@@ -32,40 +33,49 @@ namespace Unseen.MSO.ApplicationServices.Intermediary
       /// </summary>
       /// <param name="caseDto"></param>
       /// <returns></returns>
-      public virtual List<SolutionSummaryDto> ListSolutionsForCase(IntermediaryCaseDto caseDto)
+      public virtual List<SolutionSummaryDto> ListSolutionsForCase(CaseDto caseDto)
       {
-        var theCase = _IntermediaryAdaptor.AdaptCase(caseDto);
+        // get the user
+        var owner = _ownerRepository.GetOwner(caseDto.Owner.Id);
+
+        var solutions = owner.GetCase(caseDto.Id).ListSolutions();
 
         // convert the DTOs into domain objects
-        var solutions = _SolutionRespository.List((IntermediaryCase) theCase);
-
         var summaries = _IntermediaryAdaptor.AdaptionSolutionSummary(solutions);
 
         return summaries;
       }
 
       /// <summary>
-      /// Get the complete solution
+      /// Get the requested solution for this case
       /// </summary>
       /// <param name="solutionId"></param>
-      /// <param name="intermediaryOwner"></param>
+      /// <param name="caseDto"></param>
       /// <returns></returns>
-      public virtual MortgageSolutionDto GetSolution(Guid solutionId, IntermediaryUserDto intermediaryOwner)
+      public virtual MortgageSolutionDto GetSolution(Guid solutionId, CaseDto caseDto)
       {
-        var owner = _IntermediaryAdaptor.AdaptOwner(intermediaryOwner);
+        var owner = _ownerRepository.GetOwner(caseDto.Owner.Id);
 
-        var solution = _SolutionRespository.Get(solutionId);
+        var targetCase = owner.GetCase(caseDto.Id);
 
-        return (MortgageSolutionDto)_IntermediaryAdaptor.AdaptSolution(solution);
+        var solution = targetCase.GetSolution(solutionId);
+
+        return (MortgageSolutionDto) _IntermediaryAdaptor.AdaptSolution(solution);
       }
 
-
+      /// <summary>
+      /// List the suitable products for this requirement
+      /// </summary>
+      /// <param name="requirement"></param>
+      /// <param name="intermediaryDetailsDto"></param>
+      /// <returns></returns>
       public virtual List<ProductSummaryDto> ListSuitableProduct(MortgageRequirementDto requirement, IntermediaryDetailsDto intermediaryDetailsDto)
       {
         var domainRequirement = _IntermediaryAdaptor.AdaptRequirement(requirement);
+        
         var intermediaryDetails = _IntermediaryAdaptor.AdaptIntermediaryDetails(intermediaryDetailsDto);
 
-        var suitableProducts = _intermediaryProductService.ListProducts(domainRequirement, intermediaryDetails);
+        var suitableProducts = domainRequirement.ListSuitableProducts();
 
         var suitableDtoProducts = _IntermediaryAdaptor.AdaptProductSummary(suitableProducts);
 

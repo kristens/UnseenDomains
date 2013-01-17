@@ -47,10 +47,6 @@
       <Project>{c400fe22-bbcf-4515-b58a-105b3a23a334}</Project>
       <Name>Unseen.MSO.Domain.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Unseen.MSO.Core.Abstraction\Unseen.MSO.Core.Abstraction.csproj">
-      <Project>{ab7d21fa-f2a2-4326-a0da-15f6a15eff22}</Project>
-      <Name>Unseen.MSO.Core.Abstraction</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Unseen.MSO101.Domain.Core\Unseen.MSO101.Domain.Core.csproj">
       <Project>{31c7ac52-63cc-4491-b679-8a895e5e3d77}</Project>
       <Name>Unseen.MSO101.Domain.Core</Name>

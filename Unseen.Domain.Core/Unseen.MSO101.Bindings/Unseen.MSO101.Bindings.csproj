@@ -46,6 +46,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Unseen.Domain.Core\Unseen.MSO.Domain.Core.csproj">
+      <Project>{c400fe22-bbcf-4515-b58a-105b3a23a334}</Project>
+      <Name>Unseen.MSO.Domain.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Unseen.MSO.Adaptors\Unseen.MSO.Adaptors.csproj">
       <Project>{c8f08b13-1584-4fdf-9adc-e9e78d815ff7}</Project>
       <Name>Unseen.MSO.Adaptors</Name>
