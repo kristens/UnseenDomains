@@ -20,7 +20,7 @@ namespace Unseen.MSO.Core.InfrastructureServices {
     public override List<ProductSummary> ListProducts(Requirement requirement) {
       var summaries = new List<ProductSummary>();
 
-      var intermediaryRequirement = (IntermediaryRequirement) requirement;
+      var intermediaryRequirement = (MortgageRequirement) requirement;
 
       for (int x = 0; x < 10; x++) {
         var productSummary = new MortgageProductSummary((x % 2) == 0, x, Guid.NewGuid(), string.Format("Name {0}", x),

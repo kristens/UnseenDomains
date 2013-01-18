@@ -74,9 +74,9 @@ namespace Unseen.MSO.Adaptors {
     }
 
     Requirement IAdaptor.AdaptRequirement(RequirementDto dtoRequirement) {
-      var mortgageRequirementDto = (IntermediaryRequirementDto)dtoRequirement;
+      var mortgageRequirementDto = (MortgageRequirementDto)dtoRequirement;
 
-      var requirement = new IntermediaryRequirement(mortgageRequirementDto.MortgageClub, mortgageRequirementDto.Id, mortgageRequirementDto.LoanAmount, mortgageRequirementDto.TermInMonths,
+      var requirement = new MortgageRequirement( mortgageRequirementDto.Id, mortgageRequirementDto.LoanAmount, mortgageRequirementDto.TermInMonths,
                                                       mortgageRequirementDto.PurchasePrice, mortgageRequirementDto.Recommended,
                                                       mortgageRequirementDto.CreatedDate,_productService);
 

@@ -24,7 +24,7 @@ namespace Unseen.MSO101.Adaptors
 
       var mortgageRequirement = (UnseenMortgageRequirement)domainRequirement;
 
-      var dtoRequirement = new UnseenMortgageRequirementDto(mortgageRequirement.ShoeSize, mortgageRequirement.MortgageClub, mortgageRequirement.Id, mortgageRequirement.LoanAmount, mortgageRequirement.TermInMonths,
+      var dtoRequirement = new UnseenMortgageRequirementDto(mortgageRequirement.ShoeSize, mortgageRequirement.Id, mortgageRequirement.LoanAmount, mortgageRequirement.TermInMonths,
                                                       mortgageRequirement.PurchasePrice, mortgageRequirement.Recommended,
                                                       mortgageRequirement.CreatedDate);
 
@@ -34,7 +34,7 @@ namespace Unseen.MSO101.Adaptors
     Requirement IAdaptor.AdaptRequirement(RequirementDto dtoRequirement) {
       var mortgageRequirementDto = (UnseenMortgageRequirementDto)dtoRequirement;
 
-      var requirement = new UnseenMortgageRequirement(mortgageRequirementDto.ShoeSize, mortgageRequirementDto.MortgageClub, mortgageRequirementDto.Id, mortgageRequirementDto.LoanAmount, mortgageRequirementDto.TermInMonths,
+      var requirement = new UnseenMortgageRequirement(mortgageRequirementDto.ShoeSize, mortgageRequirementDto.Id, mortgageRequirementDto.LoanAmount, mortgageRequirementDto.TermInMonths,
                                                       mortgageRequirementDto.PurchasePrice, mortgageRequirementDto.Recommended,
                                                       mortgageRequirementDto.CreatedDate, _productService);
 

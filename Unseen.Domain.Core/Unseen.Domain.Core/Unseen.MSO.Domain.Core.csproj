@@ -42,7 +42,6 @@
     <Compile Include="Abstractions\ICaseRepository.cs" />
     <Compile Include="Abstractions\IOwnerRepository.cs" />
     <Compile Include="Abstractions\IProductService.cs" />
-    <Compile Include="Entities\IntermediaryRequirement.cs" />
     <Compile Include="Entities\MsoCase.cs" />
     <Compile Include="Entities\CaseSummary.cs" />
     <Compile Include="Entities\ConsumerOwner.cs" />
@@ -59,9 +58,6 @@
     <Compile Include="Entities\Requirements.cs" />
     <Compile Include="Entities\Solution.cs" />
     <Compile Include="Entities\SolutionSummary.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Entities\Core.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

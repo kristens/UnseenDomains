@@ -55,11 +55,10 @@ namespace Unseen.MSO.DomainTests {
       var bindings = new DefaultBindings();
       var service = IntermediaryFactory.GetModellingService(bindings);
 
-      var requirements = new IntermediaryRequirementDto();
+      var requirements = new MortgageRequirementDto();
       requirements.LoanAmount = 250000;
       requirements.PurchasePrice = 400000;
       requirements.TermInMonths = 256;
-      requirements.MortgageClub = "Freds Business";
 
       var suitableProducts = service.ListSuitableProduct(requirements);
 
@@ -81,7 +80,6 @@ namespace Unseen.MSO.DomainTests {
       requirements.PurchasePrice = 400000;
       requirements.TermInMonths = 256;
       requirements.ShoeSize = 23;
-      requirements.MortgageClub = "Freds Business";
 
       var suitableProducts = service.ListSuitableProduct(requirements);
 
