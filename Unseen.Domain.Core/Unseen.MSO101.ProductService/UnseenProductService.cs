@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using Unseen.Domain.Core.Abstractions;
 using Unseen.Domain.Core.Entities;
+using Unseen.Domain.Core.Entities.Mortgage;
 using Unseen.MSO.Core.InfrastructureServices;
 using Unseen.MSO101.Domain.Core;
 

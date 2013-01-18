@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Unseen.Domain.Core.Abstractions;
 
-namespace Unseen.Domain.Core.Entities {
+namespace Unseen.Domain.Core.Entities.Mortgage {
   public class MortgageRequirement: Requirement
   {
 

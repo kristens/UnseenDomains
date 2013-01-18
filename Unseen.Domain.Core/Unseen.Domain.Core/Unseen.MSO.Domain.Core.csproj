@@ -46,11 +46,11 @@
     <Compile Include="Entities\CaseSummary.cs" />
     <Compile Include="Entities\ConsumerOwner.cs" />
     <Compile Include="Entities\IntermediaryOwner.cs" />
-    <Compile Include="Entities\MortgageProduct.cs" />
-    <Compile Include="Entities\MortgageProductSummary.cs" />
-    <Compile Include="Entities\MortgageRequirement.cs" />
-    <Compile Include="Entities\MortgageSolution.cs" />
-    <Compile Include="Entities\MortgageSolutionSummary.cs" />
+    <Compile Include="Entities\Mortgage\MortgageProduct.cs" />
+    <Compile Include="Entities\Mortgage\MortgageProductSummary.cs" />
+    <Compile Include="Entities\Mortgage\MortgageRequirement.cs" />
+    <Compile Include="Entities\Mortgage\MortgageSolution.cs" />
+    <Compile Include="Entities\Mortgage\MortgageSolutionSummary.cs" />
     <Compile Include="Entities\Owner.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\ProductSummary.cs" />

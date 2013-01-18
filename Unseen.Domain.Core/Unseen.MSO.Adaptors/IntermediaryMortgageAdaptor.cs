@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Unseen.Domain.Core.Abstractions;
 using Unseen.Domain.Core.Entities;
+using Unseen.Domain.Core.Entities.Mortgage;
 using Unseen.MSO.Core.Abstraction;
 using Unseen.MSO.Core.DTOs;
 using Unseen.MSO.Core.DTOs.Intermediary;

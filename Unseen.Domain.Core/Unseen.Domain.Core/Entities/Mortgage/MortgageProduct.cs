@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Unseen.Domain.Core.Entities {
+namespace Unseen.Domain.Core.Entities.Mortgage {
   public class MortgageProduct : Product {
 
     public MortgageProduct(bool ercApply, decimal interestRate, Guid id, string name, string description): base(id, name, description)

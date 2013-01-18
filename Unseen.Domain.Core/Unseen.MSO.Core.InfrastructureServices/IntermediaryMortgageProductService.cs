@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Unseen.Domain.Core.Entities;
+using Unseen.Domain.Core.Entities.Mortgage;
 
 namespace Unseen.MSO.Core.InfrastructureServices {
 

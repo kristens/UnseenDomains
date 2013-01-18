@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Unseen.Domain.Core.Entities {
+namespace Unseen.Domain.Core.Entities.Mortgage {
   public class MortgageSolutionSummary : SolutionSummary {
 
     public MortgageSolutionSummary(Guid id, decimal loanAmount, int termInMonths, decimal purchasePrice, bool recommended, DateTime createdDate, bool progressed): base(id, createdDate, progressed)

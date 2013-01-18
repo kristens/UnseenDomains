@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Unseen.Domain.Core.Entities {
+namespace Unseen.Domain.Core.Entities.Mortgage {
   public class MortgageSolution : Solution {
 
     public MortgageSolution(List<Product> products, MortgageRequirement requirement): base (products, requirement)
