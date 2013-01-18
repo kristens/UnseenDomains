@@ -15,7 +15,8 @@ namespace Unseen.MSO.Bindings
        
         Bind<IAdaptor>().To<IntermediaryMortgageAdaptor>();
 
-        Bind<IProductService>().To<IntermediaryMortgageProductService>();
+        Bind<IMortgageProductService>().To<MortgageProductService>();
+        Bind<IProductService>().To<MortgageProductService>();
         Bind<ICaseRepository>().To<MsoRepository>();
         Bind<IOwnerRepository>().To<MsoRepository>();
         return;

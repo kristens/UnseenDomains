@@ -10,10 +10,10 @@ using Unseen.Domain.Core.Entities.Mortgage;
 
 namespace Unseen.MSO101.Domain.Core
 {
-    public class UnseenMortgageRequirement: MortgageRequirement
+    public class UnseenMortgageRequirement: HousePurchaseRequirement
     {
 
-      public UnseenMortgageRequirement(int shoeSize, Guid id, decimal loanAmount, int termInMonths, decimal purchasePrice, bool recommended, DateTime createdDate, IProductService productService):
+      public UnseenMortgageRequirement(int shoeSize, Guid id, decimal loanAmount, int termInMonths, decimal purchasePrice, bool recommended, DateTime createdDate, IMortgageProductService productService):
         base(id, loanAmount, termInMonths, purchasePrice, recommended, createdDate, productService)
       {
         ShoeSize = shoeSize;

@@ -10,9 +10,9 @@ using Unseen.MSO.Core.DTOs.Intermediary;
 namespace Unseen.MSO.Adaptors {
   public class IntermediaryMortgageAdaptor : IAdaptor
   {
-    private readonly IProductService _productService;
+    private readonly IMortgageProductService _productService;
 
-    public IntermediaryMortgageAdaptor(IProductService productService)
+    public IntermediaryMortgageAdaptor(IMortgageProductService productService)
     {
       _productService = productService;
       return;
@@ -65,7 +65,7 @@ namespace Unseen.MSO.Adaptors {
     RequirementDto IAdaptor.AdaptRequirement(Requirement domainRequirement)
     {
 
-      var mortgageRequirement = (MortgageRequirement) domainRequirement;
+      var mortgageRequirement = (HousePurchaseRequirement) domainRequirement;
 
       var dtoRequirement = new MortgageRequirementDto(mortgageRequirement.Id, mortgageRequirement.LoanAmount, mortgageRequirement.TermInMonths,
                                                       mortgageRequirement.PurchasePrice, mortgageRequirement.Recommended,
@@ -77,7 +77,7 @@ namespace Unseen.MSO.Adaptors {
     Requirement IAdaptor.AdaptRequirement(RequirementDto dtoRequirement) {
       var mortgageRequirementDto = (MortgageRequirementDto)dtoRequirement;
 
-      var requirement = new MortgageRequirement( mortgageRequirementDto.Id, mortgageRequirementDto.LoanAmount, mortgageRequirementDto.TermInMonths,
+      var requirement = new HousePurchaseRequirement( mortgageRequirementDto.Id, mortgageRequirementDto.LoanAmount, mortgageRequirementDto.TermInMonths,
                                                       mortgageRequirementDto.PurchasePrice, mortgageRequirementDto.Recommended,
                                                       mortgageRequirementDto.CreatedDate,_productService);
 

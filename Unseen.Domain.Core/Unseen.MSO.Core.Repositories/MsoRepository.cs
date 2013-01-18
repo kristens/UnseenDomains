@@ -62,7 +62,7 @@ namespace Unseen.MSO.Core.Repositories {
     /// <returns></returns>
     Solution ICaseRepository.GetSolution(Guid solutionId) {
       // we would go to a database and get all these, ensuring user and the owner match
-      var requirement = new MortgageRequirement(Guid.NewGuid(), 250000, 90, 400000, false, DateTime.Now.AddDays(-45));
+      var requirement = new HousePurchaseRequirement(Guid.NewGuid(), 250000, 90, 400000, false, DateTime.Now.AddDays(-45));
 
       var product = _ProductService.GetProductDetails(Guid.NewGuid());
 

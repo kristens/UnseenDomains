@@ -11,8 +11,8 @@ namespace Unseen.MSO101.Adaptors
 {
   public class UnseenMortgageAdaptor : IntermediaryMortgageAdaptor, IAdaptor
   {
-    private readonly IProductService _productService;
-    public UnseenMortgageAdaptor(IProductService productService)
+    private readonly IMortgageProductService _productService;
+    public UnseenMortgageAdaptor(IMortgageProductService productService)
       : base(productService)
     {
       _productService = productService;

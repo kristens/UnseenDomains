@@ -42,6 +42,10 @@
     <Compile Include="Abstractions\ICaseRepository.cs" />
     <Compile Include="Abstractions\IOwnerRepository.cs" />
     <Compile Include="Abstractions\IProductService.cs" />
+    <Compile Include="Abstractions\IMortgageProductService.cs" />
+    <Compile Include="Entities\Mortgage\BuyToLetRequirement.cs" />
+    <Compile Include="Entities\Mortgage\HousePurchaseRequirement.cs" />
+    <Compile Include="Entities\Mortgage\RateSwitchRequirement.cs" />
     <Compile Include="Entities\MsoCase.cs" />
     <Compile Include="Entities\CaseSummary.cs" />
     <Compile Include="Entities\ConsumerOwner.cs" />

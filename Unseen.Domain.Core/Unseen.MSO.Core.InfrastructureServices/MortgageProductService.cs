@@ -6,7 +6,7 @@ using Unseen.Domain.Core.Entities.Mortgage;
 
 namespace Unseen.MSO.Core.InfrastructureServices
 {
-    public abstract class MortgageProductService : IProductService
+    public class MortgageProductService : IMortgageProductService
     {
       /// <summary>
       /// Call product factory
@@ -17,12 +17,37 @@ namespace Unseen.MSO.Core.InfrastructureServices
         return new MortgageProduct(false, 3.7M, productId, "Test Product", "This is just a test product");
       }
 
-      public virtual List<ProductSummary> ListProducts(Requirement requirement) {
+
+      public List<ProductSummary> ListSuitableProduct(HousePurchaseRequirement requirement) {
         var summaries = new List<ProductSummary>();
 
         for (int x = 0; x < 10; x++) {
           var productSummary = new MortgageProductSummary((x % 2) == 0, x, Guid.NewGuid(), string.Format("Name {0}", x),
-                                                          string.Format("Description for product {0}", x));
+                                                          string.Format("Description for house purchase product {0}", x));
+          summaries.Add(productSummary);
+        }
+
+        return summaries;
+      }
+
+      public List<ProductSummary> ListSuitableProduct(BuyToLetRequirement requirement) {
+        var summaries = new List<ProductSummary>();
+
+        for (int x = 0; x < 10; x++) {
+          var productSummary = new MortgageProductSummary((x % 2) == 0, x, Guid.NewGuid(), string.Format("Name {0}", x),
+                                                          string.Format("Description for buy to let product {0}", x));
+          summaries.Add(productSummary);
+        }
+
+        return summaries;
+      }
+
+      public List<ProductSummary> ListSuitableProduct(RateSwitchRequirement requirement) {
+        var summaries = new List<ProductSummary>();
+
+        for (int x = 0; x < 10; x++) {
+          var productSummary = new MortgageProductSummary((x % 2) == 0, x, Guid.NewGuid(), string.Format("Name {0}", x),
+                                                          string.Format("Description for rate switch product {0}", x));
           summaries.Add(productSummary);
         }
 

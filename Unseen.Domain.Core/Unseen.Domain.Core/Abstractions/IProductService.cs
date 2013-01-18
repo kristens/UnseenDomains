@@ -11,6 +11,5 @@ namespace Unseen.Domain.Core.Abstractions {
 
     Product GetProductDetails(Guid productId);
 
-    List<ProductSummary> ListProducts(Requirement requirement);
   }
 }
