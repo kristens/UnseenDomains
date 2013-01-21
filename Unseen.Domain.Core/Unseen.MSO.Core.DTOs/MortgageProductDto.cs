@@ -13,7 +13,10 @@ namespace Unseen.MSO.Core.DTOs {
       InterestRate = interestRate;
       return;
     }
+
+
     public bool ErcApply { get; private set; }
     public decimal InterestRate { get; private set; }
+
   }
 }

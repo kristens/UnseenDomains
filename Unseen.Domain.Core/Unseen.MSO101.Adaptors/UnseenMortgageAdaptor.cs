@@ -20,17 +20,6 @@ namespace Unseen.MSO101.Adaptors
     }
 
 
-    RequirementDto IAdaptor.AdaptRequirement(Requirement domainRequirement) {
-
-      var mortgageRequirement = (UnseenMortgageRequirement)domainRequirement;
-
-      var dtoRequirement = new UnseenMortgageRequirementDto(mortgageRequirement.ShoeSize, mortgageRequirement.Id, mortgageRequirement.LoanAmount, mortgageRequirement.TermInMonths,
-                                                      mortgageRequirement.PurchasePrice, mortgageRequirement.Recommended,
-                                                      mortgageRequirement.CreatedDate);
-
-      return dtoRequirement;
-    }
-
     Requirement IAdaptor.AdaptRequirement(RequirementDto dtoRequirement) {
       var mortgageRequirementDto = (UnseenMortgageRequirementDto)dtoRequirement;
 

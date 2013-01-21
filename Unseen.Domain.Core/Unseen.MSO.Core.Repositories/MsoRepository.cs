@@ -60,16 +60,35 @@ namespace Unseen.MSO.Core.Repositories {
     /// </summary>
     /// <param name="solutionId"></param>
     /// <returns></returns>
-    Solution ICaseRepository.GetSolution(Guid solutionId) {
-      // we would go to a database and get all these, ensuring user and the owner match
-      var requirement = new HousePurchaseRequirement(Guid.NewGuid(), 250000, 90, 400000, false, DateTime.Now.AddDays(-45));
+    Solution ICaseRepository.GetSolution(Guid solutionId)
+    {
+
+      var hpSolution = new Guid("1F86D309-EAE1-47CD-BE03-1064E3CC5AE8");
+      var btlSolution = new Guid("2386D309-EAE1-47CD-BE03-1064E3CC5AE8");
+      var rateSwitchSolution = new Guid("4486D309-EAE1-47CD-BE03-1064E3CC5AE8");
+
+      MortgageRequirement requirement = null;
+
+      if (solutionId == hpSolution)
+      {
+        // we would go to a database and get all these, ensuring user and the owner match
+        requirement = new HousePurchaseRequirement(Guid.NewGuid(), 250000, 90, 400000, false,
+                                                   DateTime.Now.AddDays(-45));
+      }
+      else if (solutionId == btlSolution)
+      {
+        requirement = new BuyToLetRequirement(Guid.NewGuid(), 1000, DateTime.Now.AddDays(-3));
+      }
+      else if (solutionId == rateSwitchSolution)
+      {
+        requirement = new RateSwitchRequirement(Guid.NewGuid(), "122222", DateTime.Now.AddDays(-5));
+      }
 
       var product = _ProductService.GetProductDetails(Guid.NewGuid());
 
       var productList = new List<Product> { product };
 
       var solution = new MortgageSolution(productList, requirement);
-
 
       return solution;
     }

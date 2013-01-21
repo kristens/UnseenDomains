@@ -17,8 +17,6 @@ namespace Unseen.MSO.Core.Abstraction {
 
     ProductDto AdaptProduct(Product domainProduct);
 
-    RequirementDto AdaptRequirement(Requirement domainRequirement);
-
     Requirement AdaptRequirement(RequirementDto dtoRequirement);
 
     List<ProductSummaryDto> AdaptProductSummary(List<ProductSummary> domainProductSummary);

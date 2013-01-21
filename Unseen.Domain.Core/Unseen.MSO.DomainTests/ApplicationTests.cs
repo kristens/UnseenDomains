@@ -31,21 +31,57 @@ namespace Unseen.MSO.DomainTests {
     }
 
     [TestMethod]
-    public void RetrieveSolutionDetail()
+    public void RetrieveRateSwitchSolutionDetail() {
+      var bindings = new DefaultBindings();
+      var service = IntermediaryFactory.GetModellingService(bindings);
+      var owner = new IntermediaryUserDto("Fred Jones", "fsa1234", Guid.NewGuid());
+      var targetCase = new CaseDto(Guid.NewGuid(), owner);
+
+      var solutionDetail = service.GetSolution(new Guid("2386D309-EAE1-47CD-BE03-1064E3CC5AE8"), targetCase);
+
+      Assert.IsNotNull(solutionDetail, "Should have had a solution");
+      Assert.IsNotNull(solutionDetail.Products, "Should have had some products returned");
+      Assert.IsTrue(solutionDetail.Products.Count == 1, "Only one product on this solution");
+      Assert.IsNotNull(solutionDetail.Requirement, "should have a requirement");
+      Assert.IsInstanceOfType(solutionDetail.Requirement, typeof(MortgageRequirementDto), "Should be a mortgage requirement");
+      Assert.AreEqual("122222", ((MortgageRequirementDto)solutionDetail.Requirement).AccountToSwitch, "Rate switch should be populated");
+      return;
+    }
+
+    [TestMethod]
+    public void RetrieveBtlSolutionDetail() {
+      var bindings = new DefaultBindings();
+      var service = IntermediaryFactory.GetModellingService(bindings);
+      var owner = new IntermediaryUserDto("Fred Jones", "fsa1234", Guid.NewGuid());
+      var targetCase = new CaseDto(Guid.NewGuid(), owner);
+
+      var solutionDetail = service.GetSolution(new Guid("4486D309-EAE1-47CD-BE03-1064E3CC5AE8"), targetCase);
+
+      Assert.IsNotNull(solutionDetail, "Should have had a solution");
+      Assert.IsNotNull(solutionDetail.Products, "Should have had some products returned");
+      Assert.IsTrue(solutionDetail.Products.Count == 1, "Only one product on this solution");
+      Assert.IsNotNull(solutionDetail.Requirement, "should have a requirement");
+      Assert.IsInstanceOfType(solutionDetail.Requirement, typeof(MortgageRequirementDto), "Should be a mortgage requirement");
+      Assert.AreEqual(1000, ((MortgageRequirementDto)solutionDetail.Requirement).MonthlyRental, "BTL should be populated");
+      return;
+    }
+
+    [TestMethod]
+    public void RetrieveHpSolutionDetail()
     {
       var bindings = new DefaultBindings();
       var service = IntermediaryFactory.GetModellingService(bindings);
       var owner = new IntermediaryUserDto("Fred Jones", "fsa1234", Guid.NewGuid());
       var targetCase = new CaseDto(Guid.NewGuid(), owner);
 
-      var solutionDetail = service.GetSolution(Guid.NewGuid(), targetCase);
+      var solutionDetail = service.GetSolution(new Guid("1F86D309-EAE1-47CD-BE03-1064E3CC5AE8"), targetCase);
 
       Assert.IsNotNull(solutionDetail, "Should have had a solution");
       Assert.IsNotNull(solutionDetail.Products, "Should have had some products returned");
       Assert.IsTrue(solutionDetail.Products.Count == 1, "Only one product on this solution");
       Assert.IsNotNull(solutionDetail.Requirement, "should have a requirement");
       Assert.IsInstanceOfType(solutionDetail.Requirement, typeof(MortgageRequirementDto),"Should be a mortgage requirement" );
-
+      Assert.IsTrue(((MortgageRequirementDto)solutionDetail.Requirement).LoanAmount > 0, "HP should be populated");
       return;
     }
 

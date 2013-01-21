@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using Unseen.Domain.Core.Abstractions;
 using Unseen.Domain.Core.Entities;
 using Unseen.Domain.Core.Entities.Mortgage;
@@ -8,7 +9,7 @@ using Unseen.MSO.Core.DTOs;
 using Unseen.MSO.Core.DTOs.Intermediary;
 
 namespace Unseen.MSO.Adaptors {
-  public class IntermediaryMortgageAdaptor : IAdaptor
+  public class IntermediaryMortgageAdaptor : IMortgageAdaptor
   {
     private readonly IMortgageProductService _productService;
 
@@ -18,6 +19,7 @@ namespace Unseen.MSO.Adaptors {
       return;
       
     }
+
     SolutionDto IAdaptor.AdaptSolution(Solution domainSolution)
     {
 
@@ -25,10 +27,23 @@ namespace Unseen.MSO.Adaptors {
 
       foreach (var product in domainSolution.Products)
       {
-        dtoProducts.Add(((IAdaptor)this).AdaptProduct(product));
+        dtoProducts.Add(((IMortgageAdaptor)this).AdaptProduct(product));
       }
 
-      var dtoRequirement = ((IAdaptor)this).AdaptRequirement(domainSolution.Requirement);
+      RequirementDto dtoRequirement = null; 
+      if (domainSolution.Requirement is BuyToLetRequirement) {
+        dtoRequirement = ((IMortgageAdaptor)this).AdaptRequirement((BuyToLetRequirement) domainSolution.Requirement);
+      }
+      else if (domainSolution.Requirement is RateSwitchRequirement){
+        dtoRequirement = ((IMortgageAdaptor)this).AdaptRequirement((RateSwitchRequirement)domainSolution.Requirement);
+      }
+      else if (domainSolution.Requirement is HousePurchaseRequirement){
+        dtoRequirement = ((IMortgageAdaptor)this).AdaptRequirement((HousePurchaseRequirement)domainSolution.Requirement);
+      }
+      else{
+        throw new InvalidDataException("We shouldn't be here");
+       }
+      
 
       var dtoSolution = new MortgageSolutionDto(dtoProducts, (MortgageRequirementDto) dtoRequirement);
 
@@ -62,10 +77,14 @@ namespace Unseen.MSO.Adaptors {
       return dtoProduct;
     }
 
-    RequirementDto IAdaptor.AdaptRequirement(Requirement domainRequirement)
-    {
+    /// <summary>
+    /// Return a requirement based on HP
+    /// </summary>
+    /// <param name="domainRequirement"></param>
+    /// <returns></returns>
+    RequirementDto IMortgageAdaptor.AdaptRequirement(HousePurchaseRequirement domainRequirement) {
 
-      var mortgageRequirement = (HousePurchaseRequirement) domainRequirement;
+      var mortgageRequirement = domainRequirement;
 
       var dtoRequirement = new MortgageRequirementDto(mortgageRequirement.Id, mortgageRequirement.LoanAmount, mortgageRequirement.TermInMonths,
                                                       mortgageRequirement.PurchasePrice, mortgageRequirement.Recommended,
@@ -74,6 +93,43 @@ namespace Unseen.MSO.Adaptors {
       return dtoRequirement;
     }
 
+
+    /// <summary>
+    /// return a requirement based on BTL
+    /// </summary>
+    /// <param name="domainRequirement"></param>
+    /// <returns></returns>
+    RequirementDto IMortgageAdaptor.AdaptRequirement(BuyToLetRequirement domainRequirement) {
+
+      var mortgageRequirement = domainRequirement;
+
+      var dtoRequirement = new MortgageRequirementDto(mortgageRequirement.MonthlyRental,mortgageRequirement.Id, mortgageRequirement.CreatedDate);
+
+      return dtoRequirement;
+    }
+
+
+    /// <summary>
+    /// return a requirement based on a rate switch
+    /// </summary>
+    /// <param name="domainRequirement"></param>
+    /// <returns></returns>
+    RequirementDto IMortgageAdaptor.AdaptRequirement(RateSwitchRequirement domainRequirement)
+    {
+
+      var mortgageRequirement = domainRequirement;
+
+      var dtoRequirement = new MortgageRequirementDto(mortgageRequirement.AccountToSwitch, mortgageRequirement.Id, mortgageRequirement.CreatedDate);
+
+      return dtoRequirement;
+    }
+
+
+    /// <summary>
+    /// this needs to change to create the correct items based on the information passed in, implies we need a type on the dto
+    /// </summary>
+    /// <param name="dtoRequirement"></param>
+    /// <returns></returns>
     Requirement IAdaptor.AdaptRequirement(RequirementDto dtoRequirement) {
       var mortgageRequirementDto = (MortgageRequirementDto)dtoRequirement;
 
